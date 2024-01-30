@@ -5,7 +5,7 @@
     <meta name="viewport" content="initial-scale=1, width=device-width" />
 
     <link rel="stylesheet" href="./global.css" />
-    <link rel="stylesheet" href="./index.css" />
+    <link rel="stylesheet" href="./style.css" />
     <link
       rel="stylesheet"
       href="https://fonts.googleapis.com/css2?family=Inter:wght@400&display=swap"
@@ -20,26 +20,43 @@
         </header>
         <main class="main" id="main">
           <div class="punchlinebold">
-            <div class="explore-the-world">Explore the world....</div>
+            <div class="explore-the-world">
+              <h1>Explore the world effortlessly by train !</h1>
+            </div>
           </div>
           <div class="punchlinedetail">
-            <div class="compare-and-envoy">Compare and envoy....</div>
+            <div class="compare-and-envoy">
+              <h3>
+                Compare, book and envoy cheap prices for trains tickets: your
+                journey starts on Tickethack.
+              </h3>
+            </div>
           </div>
           <div class="cardscontainer">
             <div class="cardsearch">
               <div class="searchblock">
                 <div class="deparrblock">
+                  <div class="depsearch" id="depsearch-from">
+                    <input type="text" placeholder="Departure" />
+                  </div>
                   <div class="depsearch"></div>
-                  <div class="depsearch"></div>
-                  <div class="depsearch"></div>
+                  <div class="depsearch">
+                    <input type="text" placeholder="Arrival" />
+                  </div>
                 </div>
-                <div class="depsearch"></div>
+                <div class="depsearch" id="depsearch-date">
+                  <input type="date" placeholder="23/08/2022" />
+                </div>
               </div>
-              <div class="searchbutton"></div>
+              <div class="searchbutton">Search</div>
             </div>
             <div class="cardresult">
-              <div class="placeholder"></div>
-              <div class="placeholder"></div>
+              <div class="placeholder" id="placeholder-img">
+                <img src="/frontend-hackathon/images/train.png" alt="" />
+              </div>
+              <div class="placeholder" id="placeholder-txt">
+                <p>It's time to book your future trip.</p>
+              </div>
             </div>
           </div>
         </main>
