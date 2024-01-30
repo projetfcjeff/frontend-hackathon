@@ -6,7 +6,6 @@
     outline: 0;
     width: 227px;
     padding: 0 12px;
-    color: var(--color-green-logo);
   }
   .header,
   .logo {
@@ -19,6 +18,12 @@
     align-items: center;
     justify-content: space-between;
   }
+
+  .logo a{
+    text-decoration: none;
+    color: var(--color-green-logo) 
+  }
+
   .menu {
     align-self: stretch;
     box-sizing: border-box;
