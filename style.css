@@ -1,4 +1,4 @@
-/* .logo {
+.logo {
     border: 2px solid var(--color-violet);
     background-color: transparent;
     font-family: var(--font-inter);
@@ -6,8 +6,8 @@
     outline: 0;
     width: 227px;
     padding: 0 12px;
-    color: var(--color-black);
-  } */
+    color: var(--color-green-logo);
+  }
   .header,
   .logo,
   .menu {
