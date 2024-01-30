@@ -1,4 +1,4 @@
-.logo {
+/* .logo {
     border: 2px solid var(--color-violet);
     background-color: transparent;
     font-family: var(--font-inter);
@@ -7,7 +7,7 @@
     width: 227px;
     padding: 0 12px;
     color: var(--color-black);
-  }
+  } */
   .header,
   .logo,
   .menu {
