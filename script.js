@@ -91,6 +91,31 @@ var queryString = new URLSearchParams({
                         let pricSelec = (this.parentNode.parentNode).querySelector('.tripPrice').textContent
                         pricFinal = pricSelec.replace(/\D/g, "");
                         console.log(pricFinal)
+
+                        let myHeaders = new Headers();
+                        myHeaders.append("Content-Type", "application/x-www-form-urlencoded");
+
+                        let urlencoded = new URLSearchParams();
+                        urlencoded.append("departure", inputDep);
+                        urlencoded.append("arrival", inputArr);
+                        urlencoded.append("price", pricFinal);
+                        urlencoded.append("date", "2024-01-31");
+
+                        var requestOptions = {
+                        method: 'POST',
+                        headers: myHeaders,
+                        body: urlencoded,
+                        redirect: 'follow'
+                        };
+
+                        fetch("http://localhost:3000/selections/", requestOptions)
+                        .then(response => response.json())
+                        .then(result => {
+                            console.log(result)
+                            window.location.href = "./cart/cart.html"
+                        })
+                        .catch(error => console.log('error', error));
+
                     })
                 }
             
