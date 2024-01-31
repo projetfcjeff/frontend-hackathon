@@ -1,7 +1,5 @@
 //Mise à jour de la homepage en page de la recherche effectuée
 
-
-
 //-------- 1. Test de la cohérence des champs saisis -----------------------------------------
 //Definition des patterns regex utilisés pour vérifier la cohérence des inputs des champs texte
 const patternDepArr = /^(?!.*\s{2})[a-z]+(?:-[a-z]+|\s+[a-z]+)*$/i;
@@ -71,14 +69,31 @@ var queryString = new URLSearchParams({
                 {
                     let date = new Date(res.date)
                     block2.innerHTML += `<div class="tripRes">
-                    <div class="tripContent">${res.departure} > ${res.arrival}</div>
-                    <div class="tripContent">${date.getHours()}:${date.getMinutes()}</div>
-                    <div class="tripContent">${res.price}€</div>
+                    <div class="tripContent tripDepArr">${res.departure} > ${res.arrival}</div>
+                    <div class="tripContent tripDate">${date.getHours()}:${date.getMinutes()}</div>
+                    <div class="tripContent tripPrice">${res.price}€</div>
                     <div class="tripContent">
                         <button class="btnBook">Book</button>
                     </div>`
                 }
                 block2.classList.add('tripResContainerDyn');
+            
+                const buttonsBook = document.querySelectorAll('.btnBook')
+
+                for (let buttonBook of buttonsBook){
+                    buttonBook.addEventListener('click', function () 
+                    {
+                        // console.log((this.parentNode.parentNode).querySelector('.tripPrice').textContent)
+
+                        
+                        let depFinal = inputDep
+                        let arrFinal = inputArr
+                        let pricSelec = (this.parentNode.parentNode).querySelector('.tripPrice').textContent
+                        pricFinal = pricSelec.replace(/\D/g, "");
+                        console.log(pricFinal)
+                    })
+                }
+            
             }
 // ------- 4. Mise à jour de l'image de la div #picTrain de droite de la HP pour retourner une absence de resultat ---------- 
             else 
@@ -95,12 +110,8 @@ var queryString = new URLSearchParams({
                 // imgResult.innerHTML = `<img src="./images/notfound.png" alt="" srcset="" />`
                 // txtResult.textContent = `No trip found`
             }
-        }) //Todo passer en variable le texte - error text de la route
-
-
-// ------- 4. Mise à jour de l'image de la div #picTrain de droite de la HP pour retourner une absence de resultat ----------
-   
+        }) //Todo passer en variable le texte - error text de la route 
     });
 
- //TODO mettre à jour la div pour ajouter les cartes de trajet
- 
+
+
