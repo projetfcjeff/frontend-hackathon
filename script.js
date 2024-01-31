@@ -1,9 +1,12 @@
-//ID button : searchBtn
+//Mise à jour de la homepage en page de la recherche effectuée
 
 //Récupération des éléments clés de l'UI
 const searchBtn = document.querySelector('#searchBtn')
+const imgResult = document.querySelector('#picTrain')
+const txtResult = document.querySelector('#txtBlock2')
 
-
+//-------- 1. Test de la cohérence des champs saisis -----------------------------------------
+//Definition des patterns regex utilisés pour vérifier la cohérence des inputs des champs texte
 const patternDepArr = /^(?!.*\s{2})[a-z]+(?:-[a-z]+|\s+[a-z]+)*$/i;
 const patternDat = /^\d{4}-\d{2}-\d{2}$/
 const url = ('http://localhost:3000/trips/')
@@ -36,6 +39,7 @@ searchBtn.addEventListener('click', ()=> {
         return alert('Vérifiez le format des champs saisis')
     }
     
+//-------- 2. Appel de la route trips du BE pour récupérer les data de la BDD correspondants aux inputs de recherche ---
     // Création de la chaîne de requête en ajoutant les paramètres d'URL
 var queryString = new URLSearchParams({
     departure: inputDep,
@@ -54,10 +58,25 @@ var queryString = new URLSearchParams({
   
   fetch(url, requestOptions)
     .then(response => response.json())
-    .then(result => console.log(result))
-    .catch(error => console.log('error', error));
+    .then(result => 
+        {
+            console.log(result)
+            if (result.result)
+            {
+                console.log(result)
+            }
+            else 
+            {
+                console.log(result.result)
+                imgResult.innerHTML = `<img src="./images/notfound.png" alt="" srcset="" />`
+                txtResult.textContent = `No trip found`
+            }
+        }) //Todo passer en variable le texte - error text de la route
+
+
+// ------- 4. Mise à jour de l'image de la div #picTrain de droite de la HP pour retourner une absence de resultat ----------
+   
+    });
 
  //TODO mettre à jour la div pour ajouter les cartes de trajet
- //TODO mettre à jour la div pour changer l'image de résultat
-
-})
+ 
