@@ -12,9 +12,9 @@ header {
   height: 8.5%;
 }
 
-#main {
+main {
   flex: 1;
-  background-color: red;
+  background: url("./images/background.jpg") center/cover no-repeat;
 }
 
 #logo {
@@ -41,4 +41,53 @@ header {
 
 #booking-link {
   margin-left: 32px;
+}
+
+#firstText {
+  text-align: center;
+  color: white;
+}
+
+#secondText {
+  text-align: center;
+  color: white;
+}
+
+#blockContainer {
+  display: flex;
+  margin-left: 330px;
+  margin-top: 48px;
+  gap: 120px; /* Ajoute un espace de 20 pixels entre les blocs */
+}
+
+#block1,
+#block2 {
+  width: 250px; /* Largeur du carré */
+  height: 290px; /* Hauteur du carré */
+  background-color: white;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+}
+
+#picTrain {
+  align-items: center;
+  margin-left: 80px;
+  margin-top: 56px;
+}
+
+#picTrain img {
+  width: 50%; /* Ajustez le pourcentage selon vos besoins */
+  height: auto;
+}
+
+#txtBlock2 {
+  text-align: center;
+}
+
+#block2 hr {
+  width: 80%;
+  border: 1px solid green;
+  margin-top: 32px;
+  margin-bottom: 32px;
 }
