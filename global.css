@@ -5,23 +5,24 @@ body {
   
   :root {
     /* fonts */
-    --font-inter: Inter;
+    --font-project: Inter;
   
     /* font sizes */
     --font-size-xs: 12px;
   
     /* Colors */
     --color-white: #fff;
-    --color-mediumorchid: #d136d4;
-    --color-mediumblue: #3e24dd;
-    --color-black: #000;
-    --color-violet: #e371e5;
-    --color-green-logo: #389A85;
+    --color-grey-input-subBckg: #F0F1F2;
+    --color-grey-input-focus: #D9DBDB;
+    --color-blue-input-focus: #405E88;
+    --color-blue-footer: #00153E;
+    --color-green: #469E86;
+    --color-grey-card-bckgd:#F5EEEE;
   
     /* Gaps */
-    --gap-5xs: 8px;
+    /* --gap-5xs: 8px; */
   
     /* Paddings */
-    --padding-5xs: 8px;
+    /* --padding-5xs: 8px; */
   }
   
