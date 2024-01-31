@@ -17,14 +17,17 @@ searchBtn.addEventListener('click', ()=> {
     if (!(patternDepArr.test(inputDep)))
     {
         document.querySelector('#inputDep').style.borderColor = 'red';
+        return alert('Vérifiez le format des champs saisis')
     }
     if (!(patternDepArr.test(inputArr)))
     {
         document.querySelector('#inputArr').style.borderColor = 'red';
+        return alert('Vérifiez le format des champs saisis')
     }
     if (!(patternDat.test(inputDat)))
     {
         document.querySelector('#inputDat').style.borderColor = 'red';
+        return alert('Vérifiez le format des champs saisis')
     }
     
 })
