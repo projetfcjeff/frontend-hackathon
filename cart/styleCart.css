@@ -1,0 +1,65 @@
+/* Volet header  - ne pas toucher défini dans index html à la racine*/
+body {
+    display: flex;
+    flex-direction: column;
+    height: 100vh; /* 100% de la hauteur de la fenêtre */
+    margin: 0;
+    padding: 0;
+  }
+  
+  header {
+    display: flex;
+    justify-content: space-between;
+    height: 8.5%;
+  }
+   
+  #logo {
+    padding-top: 12px;
+    padding-left: 16px;
+  }
+  
+  #logo a {
+    text-decoration: none;
+    color: var(--color-green);
+    font-family: var(--font-logo);
+    font-size: var(--font-size-xl);
+  }
+  
+  #link-header {
+    padding-top: 12px;
+    padding-right: 16px;
+  }
+  
+  #link-header a {
+    text-decoration: none;
+    color: black;
+  }
+  
+  #booking-link {
+    margin-left: 32px;
+  }
+  
+  /* Volet Main */
+  main {
+    display: flex;
+    flex:1;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--color-grey-input-subBckg);
+    padding: 18%;
+  }
+
+  .container-cart-booking{
+    display: flex;
+    flex-direction: column;
+    min-height: 136px;
+    flex:1;
+    justify-content: space-evenly;
+    align-items: center;
+    background-color: var(--color-white);
+  }
+
+  #text-title, #question-result {
+    font-family: var(--font-project);
+    font-size: var(--font-size-xs);
+  }
