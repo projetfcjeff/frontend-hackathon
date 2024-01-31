@@ -1,15 +1,44 @@
+body {
+  display: flex;
+  flex-direction: column;
+  height: 100vh; /* 100% de la hauteur de la fenêtre */
+  margin: 0;
+  padding: 0;
+}
+
 header {
   display: flex;
   justify-content: space-between;
-  padding: 24px;
+  height: 8.5%;
+}
+
+#main {
+  flex: 1;
+  background-color: red;
+}
+
+#logo {
+  padding-top: 12px;
+  padding-left: 16px;
 }
 
 #logo a {
   text-decoration: none;
   color: var(--color-green);
+  font-family: var(--font-logo);
+  font-size: var(--font-size-xl);
+}
+
+#link-header {
+  padding-top: 12px;
+  padding-right: 16px;
 }
 
 #link-header a {
   text-decoration: none;
   color: black;
+}
+
+#booking-link {
+  margin-left: 32px;
 }

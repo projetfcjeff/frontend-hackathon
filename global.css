@@ -1,28 +1,29 @@
 body {
-    margin: 0;
-    line-height: normal;
-  }
-  
-  :root {
-    /* fonts */
-    --font-project: Inter;
-  
-    /* font sizes */
-    --font-size-xs: 12px;
-  
-    /* Colors */
-    --color-white: #fff;
-    --color-grey-input-subBckg: #F0F1F2;
-    --color-grey-input-focus: #D9DBDB;
-    --color-blue-input-focus: #405E88;
-    --color-blue-footer: #00153E;
-    --color-green: #469E86;
-    --color-grey-card-bckgd:#F5EEEE;
-  
-    /* Gaps */
-    /* --gap-5xs: 8px; */
-  
-    /* Paddings */
-    /* --padding-5xs: 8px; */
-  }
-  
+  margin: 0;
+  line-height: normal;
+}
+
+:root {
+  /* fonts */
+  --font-project: Inter;
+  --font-logo: Inter;
+
+  /* font sizes */
+  --font-size-xs: 12px;
+  --font-size-xl: 24px;
+
+  /* Colors */
+  --color-white: #fff;
+  --color-grey-input-subBckg: #f0f1f2;
+  --color-grey-input-focus: #d9dbdb;
+  --color-blue-input-focus: #405e88;
+  --color-blue-footer: #00153e;
+  --color-green: #469e86;
+  --color-grey-card-bckgd: #f5eeee;
+
+  /* Gaps */
+  /* --gap-5xs: 8px; */
+
+  /* Paddings */
+  /* --padding-5xs: 8px; */
+}
