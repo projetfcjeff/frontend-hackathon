@@ -1,9 +1,6 @@
 //Mise à jour de la homepage en page de la recherche effectuée
 
-//Récupération des éléments clés de l'UI
-const searchBtn = document.querySelector('#searchBtn')
-const imgResult = document.querySelector('#picTrain')
-const txtResult = document.querySelector('#txtBlock2')
+
 
 //-------- 1. Test de la cohérence des champs saisis -----------------------------------------
 //Definition des patterns regex utilisés pour vérifier la cohérence des inputs des champs texte
@@ -13,6 +10,11 @@ const url = ('http://localhost:3000/trips/')
 
 //Positionne un écouteur sur le bouton recherche
 searchBtn.addEventListener('click', ()=> {
+    //Récupération des éléments clés de l'UI
+    const searchBtn = document.querySelector('#searchBtn')
+    const imgResult = document.querySelector('#picTrain')
+    const txtResult = document.querySelector('#txtBlock2')
+    const block2 = document.querySelector('#block2')
     //Recuperation des valeurs saisies dans les champs
     document.querySelector('#inputArr').style.borderColor = 'black';
     document.querySelector('#inputDep').style.borderColor = 'black';
@@ -60,16 +62,38 @@ var queryString = new URLSearchParams({
     .then(response => response.json())
     .then(result => 
         {
-            console.log(result)
+            // console.log(result)
+//----------3. MAJ liste des voyages -------------------------------------------------------------------
             if (result.result)
             {
-                console.log(result)
+                block2.innerHTML =''
+                for (let res of result.result)
+                {
+                    let date = new Date(res.date)
+                    block2.innerHTML += `<div class="tripRes">
+                    <div class="tripContent">${res.departure} > ${res.arrival}</div>
+                    <div class="tripContent">${date.getHours()}:${date.getMinutes()}</div>
+                    <div class="tripContent">${res.price}€</div>
+                    <div class="tripContent">
+                        <button class="btnBook">Book</button>
+                    </div>`
+                }
+                block2.classList.add('tripResContainerDyn');
             }
+// ------- 4. Mise à jour de l'image de la div #picTrain de droite de la HP pour retourner une absence de resultat ---------- 
             else 
             {
                 console.log(result.result)
-                imgResult.innerHTML = `<img src="./images/notfound.png" alt="" srcset="" />`
-                txtResult.textContent = `No trip found`
+                block2.innerHTML = `<div id="block2">
+                <div id="picTrain">
+                  <img src="./images/notfound.png" alt="" srcset="" />
+                </div>
+                <hr />
+                <div id="txtBlock2">No trip found.</div>
+                </div>
+              </div>`
+                // imgResult.innerHTML = `<img src="./images/notfound.png" alt="" srcset="" />`
+                // txtResult.textContent = `No trip found`
             }
         }) //Todo passer en variable le texte - error text de la route
 
